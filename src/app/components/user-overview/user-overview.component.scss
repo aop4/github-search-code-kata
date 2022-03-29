@@ -1,0 +1,17 @@
+.user-data-container {
+  display: flex;
+  padding: 1em;
+}
+
+.user-profile-img {
+  max-width: 100px;
+  border-radius: 4px;
+}
+
+.text-container {
+  padding-left: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2em;
+}

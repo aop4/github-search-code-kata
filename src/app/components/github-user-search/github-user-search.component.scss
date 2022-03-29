@@ -1,0 +1,41 @@
+.search-flex {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.search-container {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+}
+
+.search-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar {
+  width: 80%;
+  font-size: 1.3em;
+  padding: 0.5em;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.search-btn {
+  font-size: 1.3em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  background-color: #2972e0;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.status-text {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0.5em 0.5em;
+}
