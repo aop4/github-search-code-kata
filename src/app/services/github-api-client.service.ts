@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable()
-export class GithubSearchClient {
+export class GithubApiClient {
 
-  private static readonly BASE_URL = 'https://api.github.com/search/users';
+  private static readonly BASE_URL = 'https://api.github.com';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,7 +19,14 @@ export class GithubSearchClient {
       }
     });
 
-    return firstValueFrom(this.httpClient.get(GithubSearchClient.BASE_URL, {params: params}));
+    return firstValueFrom(this.httpClient.get(`${GithubApiClient.BASE_URL}/search/users`, {params: params}));
+  }
+
+  public getUserDetail(username: string): Promise<object> {
+    if (!username) {
+      return Promise.reject();
+    }
+    return firstValueFrom(this.httpClient.get(`${GithubApiClient.BASE_URL}/users/${username}`));
   }
 
 }

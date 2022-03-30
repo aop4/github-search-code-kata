@@ -1,13 +1,8 @@
-.search-flex {
-  display: flex;
-  height: 100vh;
-  align-items: center;
-}
-
 .search-container {
-  width: 90%;
+  width: 95%;
   max-width: 700px;
   margin: auto;
+  padding: 5% 0;
 }
 
 .search-controls {
@@ -18,24 +13,24 @@
 
 .search-bar {
   width: 80%;
-  font-size: 1.3em;
+  font-size: var(--large-font-size);
   padding: 0.5em;
   border: 1px solid black;
   border-radius: 8px;
 }
 
 .search-btn {
-  font-size: 1.3em;
+  font-size: var(--large-font-size);
   padding: 0.5em 1em;
   cursor: pointer;
-  background-color: #2972e0;
+  background-color: var(--light-blue);
   color: white;
   border: 1px solid white;
   border-radius: 8px;
 }
 
 .status-text {
-  font-size: 1.2em;
+  font-size: var(--default-font-size);
   margin: 0;
   padding: 0.5em 0.5em;
 }

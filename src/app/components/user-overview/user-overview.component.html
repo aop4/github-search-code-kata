@@ -1,7 +1,21 @@
 <div class="user-data-container">
-  <img class="user-profile-img" [src]="userData.profileImageUrl">
-  <div class="text-container">
-    <span>{{ userData.username }}</span>
-    <a [href]="userData.profileUrl">{{ userData.profileUrl }}</a>
+  <div class="user-overview-container">
+    <img class="user-profile-img" [src]="userData.profileImageUrl">
+    <div class="push-right">
+      <div class="space-apart">
+        <div class="text-container">
+          <span>{{ userData.username }}</span>
+          <a [href]="userData.profileUrl">{{ userData.profileUrl }}</a>
+        </div>
+        <fa-icon [icon]="userDetail.isComponentVisible ? upArrow : downArrow"
+          class="expand-collapse-btn"
+          (click)="userDetail.toggleComponent()"></fa-icon>
+      </div>
+      <div class="user-detail">
+        <user-detail #userDetail
+          class="userDetail"  
+          [user]="userData"></user-detail>
+      </div>
+    </div>
   </div>
 </div>

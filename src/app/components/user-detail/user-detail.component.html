@@ -1,0 +1,7 @@
+<div class="user-detail-container"
+    *ngIf="userDetail !== null && isComponentVisible">
+    <p class="user-name">{{userDetail.fullName}}</p>
+    <p class="user-stat">Repositories: {{userDetail.numPublicRepos}}</p>
+    <p class="user-stat">Followers: {{userDetail.numFollowers}}</p>
+    <p class="user-stat">Following: {{userDetail.numFollowing}}</p>
+</div>

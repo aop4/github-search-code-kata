@@ -1,17 +1,41 @@
-.user-data-container {
+$user-overview-padding: 1em;
+$img-size: 100px;
+$text-left-padding: 2em;
+
+.user-overview-container {
   display: flex;
-  padding: 1em;
+  padding: $user-overview-padding;
 }
 
 .user-profile-img {
-  max-width: 100px;
+  max-width: $img-size;
+  max-height: $img-size;
   border-radius: 4px;
 }
 
 .text-container {
-  padding-left: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.2em;
+  font-size: var(--default-font-size);
+  height: $img-size;
+}
+
+.push-right {
+  padding-left: $text-left-padding;
+  width: 100%;
+}
+
+.space-apart {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.expand-collapse-btn {
+  align-self: center;
+  padding: 5%;
+  font-size: 2em;
+  color: var(--light-blue);
+  cursor: pointer;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GithubSearchClient } from '../../services/github-search-client.service';
+import { GithubApiClient } from '../../services/github-api-client.service';
 import { User } from '../../models/user';
 
 @Component({
@@ -13,14 +13,14 @@ export class GithubUserSearchComponent implements OnInit {
   statusText: string = '';
   searchResults: any[] = [];
 
-  constructor(private githubSearchService: GithubSearchClient) {
+  constructor(private githubApiClient: GithubApiClient) {
   }
 
   ngOnInit(): void {
   }
 
   performSearch(): void {
-    this.githubSearchService.searchForUser(this.queryString)
+    this.githubApiClient.searchForUser(this.queryString)
                             .then((users) => this.setSearchResults(users), () => this.onSearchFailed());
   }
 

@@ -1,17 +1,15 @@
-<div class="search-flex">
-  <div class="search-container">
-    <form class="search-controls"
-          (submit)="performSearch()">
-      <input type="text"
-        [(ngModel)]="queryString"
-        name="searchBar"
-        class="search-bar"
-        placeholder="Search for a GitHub user">
-      <button class="search-btn"
-        type="submit">Search</button>
-    </form>
-    <p class="status-text">{{statusText}}</p>
-    <user-overview *ngFor="let user of searchResults"
-      [userData]="user"></user-overview>
-  </div>
+<div class="search-container">
+  <form class="search-controls"
+        (submit)="performSearch()">
+    <input type="text"
+      [(ngModel)]="queryString"
+      name="searchBar"
+      class="search-bar"
+      placeholder="Search for a GitHub user">
+    <button class="search-btn"
+      type="submit">Search</button>
+  </form>
+  <p class="status-text">{{statusText}}</p>
+  <user-overview *ngFor="let user of searchResults"
+    [userData]="user"></user-overview>
 </div>
