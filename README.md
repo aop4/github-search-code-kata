@@ -1,4 +1,8 @@
-# GithubSearchCodeKata
+# Github Search code kata
+
+## Prerequisites
+[Node/NPM](https://nodejs.org)  
+[Angular CLI](https://www.npmjs.com/package/@angular/cli)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
