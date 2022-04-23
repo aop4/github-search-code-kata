@@ -9,13 +9,15 @@ export class GithubApiClient {
 
   constructor(private httpClient: HttpClient) { }
 
-  public searchForUser(queryString: string): Promise<object> {
-    if (!queryString) {
+  public searchForUser(userSearchTerm: string, page: number, resultsPerPage: number): Promise<object> {
+    if (!userSearchTerm || page <= 0 || resultsPerPage <= 0) {
       return Promise.reject();
     }
     let params: HttpParams = new HttpParams({
       fromObject: {
-        'q': queryString
+        'q': userSearchTerm,
+        'page': page,
+        'per_page': resultsPerPage
       }
     });
 

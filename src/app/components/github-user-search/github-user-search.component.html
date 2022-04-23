@@ -1,6 +1,6 @@
 <div class="search-container">
   <form class="search-controls"
-        (submit)="performSearch()">
+        (submit)="onFormSubmit()">
     <input type="text"
       [(ngModel)]="queryString"
       name="searchBar"
@@ -10,6 +10,8 @@
       type="submit">Search</button>
   </form>
   <p class="status-text">{{statusText}}</p>
-  <user-overview *ngFor="let user of searchResults"
+  <user-overview *ngFor="let user of searchResults | paginate: { itemsPerPage: RESULTS_PER_PAGE, currentPage: pageNumber, totalItems: totalNumResults }"
     [userData]="user"></user-overview>
+  <pagination-controls *ngIf="searchResults.length > 0"
+    (pageChange)="goToPage($event)"></pagination-controls>
 </div>
